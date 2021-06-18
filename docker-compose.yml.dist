@@ -1,0 +1,53 @@
+version: "3"
+services:
+    icecast:
+      build: backend/Dockerfile
+      context: .
+      ports:
+        - 127.0.0.1:1234:8443
+      networks:
+        - tugaza
+      environment:
+        - SOURCE_PASSWORD=abc
+        - RELAY_PASSWORD=def
+        - ADMIN_USERNAME=admin
+        - ADMIN_PASSWORD=hackmeplease
+        - ADVERTISED_HOSTNAME=
+        - QUEUE_SERVER=amqp://rabbits:rabbits@rabbits:5672
+        - PLAY_DEVICE=hw:3,1,0
+        - RECORD_DEVICE=hw:3,1,0
+      volumes:
+        - ./cache:/data
+        - ./pki:/pki
+        - /tmp/volatile:/volatile
+      devices:
+        - /dev/snd
+    redis:
+        image: redis
+        networks:
+          - buba
+    rabbits:
+      image: rabbitmq:management
+      ports:
+        - 127.0.0.1:25672:15672
+      environment:
+        - RABBITMQ_DEFAULT_USER=rabbits
+        - RABBITMQ_DEFAULT_PASS=rabbits
+      volumes:
+        - ./data/rmq:/var/lib/rabbitmq
+      networks:
+        - buba
+    apashi:
+      build: 
+        context: .
+        dockerfile: gui/Dockerfile
+      networks:
+        - buba
+      ports:
+        - 1235:443
+      volumes:
+        - ././gui/:/usr/local/apache2/cgi-bin
+        - ./pki/:/pki/
+        - /tmp/volatile:/volatile
+networks:
+  tugaza:

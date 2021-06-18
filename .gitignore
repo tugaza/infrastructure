@@ -1,0 +1,4 @@
+data/*
+pki/*
+cache/*
+!.gitkeep
