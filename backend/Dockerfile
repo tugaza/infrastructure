@@ -5,6 +5,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 RUN mkdir /src; chown nobody:root /src; mkdir /nonexistent; chmod 777 /nonexistent
 WORKDIR /src
 RUN wget https://yt-dl.org/downloads/latest/youtube-dl -O youtube-dl && chmod a+rx youtube-dl && chown nobody:root youtube-dl;
+RUN usermod -G audio nobody
 USER nobody
-ADD ../player/ /src/
+ADD . /src/
 CMD ["/bin/bash", "/src/entrypoint.sh"]

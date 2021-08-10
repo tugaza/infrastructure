@@ -1,4 +1,4 @@
 data/*
 pki/*
-cache/*
+shared_storage/*
 !.gitkeep
