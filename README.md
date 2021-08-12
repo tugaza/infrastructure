@@ -22,4 +22,4 @@ MUST HAVE/RUN:
 * `sudo modprobe snd-aloop`
 * `arecord -l | grep "Loopback PCM"` to find out what PLAY_DEVICE / RECORD_DEVICE should be set to (`hw:$card,$device,$subdevice`)
 * run `mkdir /tmp/volatile && chmod 777 /tmp/volatile` prior to docker-compose up.
-* *FIXME* `chmod -R 777 ../gui/modules`
+* *FIXME* run ../gui/install-deps.sh
