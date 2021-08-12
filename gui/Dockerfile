@@ -1,4 +1,4 @@
 FROM httpd
-RUN apt-get update && apt-get install -y git amqp-tools redis-tools jq curl imagemagick file
+RUN apt-get update && apt-get install -y git wget redis-tools jq curl imagemagick file
 ADD httpd.conf /usr/local/apache2/conf/httpd.conf
 ADD httpd-ssl.conf /usr/local/apache2/conf/extra/httpd-ssl.conf
