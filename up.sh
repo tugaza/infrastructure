@@ -22,4 +22,5 @@ then
     read
 fi
 
+$(cd ../gui && ./install-deps.sh)
 docker-compose up --build

@@ -1,0 +1,21 @@
+[
+    {
+	"timeslot": {
+	    "day":[1,2,3,4,5,6,7],
+	    "start_time": 1725,
+	    "end_time": 1845,
+	    "human_name": "example_one",
+	    "queue": "example1"
+	}
+    },
+    {
+	"timeslot": {
+	    "day":[3,4,5,6],
+	    "start_time": 1845,
+	    "end_time": 2245,
+	    "human_name": "example two",
+	    "queue": "example2"
+	}
+    }
+
+]
