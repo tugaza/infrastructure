@@ -1,5 +1,5 @@
 #!/bin/bash
-mkdir -p /tmp/volatile && chmod 777 /tmp/volatile
+sudo mkdir -p /tmp/volatile && sudo chmod 777 /tmp/volatile
 sudo modprobe snd-aloop
 arecord -l | grep Loopback
 if [[ ! -f ../player/vars/environment.sh ]];
@@ -23,4 +23,4 @@ then
 fi
 
 $(cd ../gui && ./install-deps.sh)
-docker-compose up --build
+docker-compose up --build 

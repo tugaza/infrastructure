@@ -43,7 +43,7 @@ services:
       ports:
         - 1235:443
       volumes:
-        - ../gui/:/usr/local/apache2/cgi-bin
+        - ../gui/:/src/
         - ./pki/:/pki/
         - /tmp/volatile:/volatile
         - ./shared_storage:/data/

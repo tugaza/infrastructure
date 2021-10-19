@@ -1,4 +1,3 @@
-FROM httpd
-RUN apt-get update && apt-get install -y socat git wget redis-tools jq curl imagemagick file procps
-ADD httpd.conf /usr/local/apache2/conf/httpd.conf
-ADD httpd-ssl.conf /usr/local/apache2/conf/extra/httpd-ssl.conf
+FROM debian:buster-slim
+RUN apt-get update && apt-get install -y socat git wget redis-tools jq curl imagemagick file procps apache2-utils
+CMD ["/bin/bash", "/src/httpd.sh"]
