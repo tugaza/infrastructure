@@ -8,7 +8,7 @@ RUN wget https://yt-dl.org/downloads/latest/youtube-dl -O youtube-dl && chmod a+
 RUN usermod -G audio nobody
 ADD . /src/
 WORKDIR /src
-RUN mkdir cache
+RUN mkdir cache || true
 RUN bash install-deps.sh
 USER nobody
 CMD ["/bin/bash", "/src/entrypoint.sh"]
