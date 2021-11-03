@@ -10,8 +10,8 @@ then
 fi
 if [[ ! -f ../gui/vars/environment.sh ]];
 then
-    cp ../gui/vars/environment.sh.dist ../player/vars/environment.sh
-    echo "PLAYER ENVIRONMENT UNSET, COPIED FROM .dist; PLEASE REVIEW ENVIRONMENT CONFIGURATION and press <enter> to continue"
+    cp ../gui/vars/environment.sh.dist ../gui/vars/environment.sh
+    echo "GUI ENVIRONMENT UNSET, COPIED FROM .dist; PLEASE REVIEW ENVIRONMENT CONFIGURATION and press <enter> to continue"
     read
 fi
 
