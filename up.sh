@@ -21,4 +21,4 @@ then
 fi
 
 $(cd ../gui && ./install-deps.sh)
-docker-compose up --build 
+docker-compose up --build
