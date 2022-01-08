@@ -1,7 +1,5 @@
 #!/bin/bash
 sudo mkdir -p /tmp/volatile && sudo chmod 777 /tmp/volatile
-sudo modprobe snd-aloop
-arecord -l | grep Loopback
 if [[ ! -f ../player/vars/environment.sh ]];
 then
     cp ../player/vars/environment.sh.dist ../player/vars/environment.sh
